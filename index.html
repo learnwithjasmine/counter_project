@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .increment {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .increment:hover {
+            background-color: #45a049;
+        }
+        .decrement {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #f44336;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .decrement:hover {
+            background-color: #d32f2f;
+        }
+        input {
+            width: 50px;
+            height: 30px;
+            font-size: 16px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Counter</h1>
+    <button class="increment" onclick="increment()">+</button>
+    <input type="text" id="counter_project" value="0" readonly>
+    <button class="decrement" onclick="decrement()">-</button>
+    <script>
+        let by = document.getElementById("counter_project");
+        function increment() {
+            by.value = parseInt(by.value) + 1;
+            if (by.value > 10) {
+                alert("Reached max");
+                by.value = 10;
+            }
+        }
+        function decrement() {
+            by.value = parseInt(by.value) - 1;
+            if (by.value < 0) {
+                alert("Min value reached");
+                by.value = 0;
+            }
+        }
+    </script>
+</body>
+</html>
